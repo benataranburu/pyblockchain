@@ -8,7 +8,9 @@ You will need an HTTP Client for calling the methods
 Methods:
 
  /transactions/new: create a new transaction to a block
+ 
  /mine: mine a new block.
+ 
  /chain: return the full Blockchain.
 
  Start the server:
