@@ -11,4 +11,3 @@ You will need an HTTP Client for calling the methods.
  **Start the server:**
 
  `$ python blockchain.py `     
- ` Running on http://127.0.0.1:4444/ (Press CTRL+C to quit) `
