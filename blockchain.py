@@ -67,6 +67,8 @@ node_identifier = str(uuid4()).replace('-', '')
 # Instantiate the Blockchain
 blockchain = Blockchain()
 
+# API methods:
+# POST: Create new transaction
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
     values = request.get_json()
@@ -79,6 +81,7 @@ def new_transaction():
     response = {'message': f'Transaction will be added to block {index}'}
     return jsonify(response), 201
 
+# GET: display full chain
 @app.route('/chain', methods=['GET'])
 def full_chain():
     response = {
@@ -87,6 +90,7 @@ def full_chain():
     }
     return jsonify(response), 200
 
+# GET: mine new block
 @app.route('/mine', methods=['GET'])
 def mine():
     # POW algorithm
@@ -112,6 +116,6 @@ def mine():
         'previous_hash': block['previous_hash'],
     }
     return jsonify(response), 200
-
+# Run app
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=4444)
